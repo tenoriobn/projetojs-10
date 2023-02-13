@@ -1,0 +1,13 @@
+:root {
+    /* Cor */
+    --branco-creme: hsl(240, 5%, 91%);
+    --cinza: hsl(237, 12%, 33%);
+    --cinza-claro: hsl(240, 6%, 50%);
+    --laranja: hsl(14, 88%, 65%);
+    --roxo-claro: hsl(240, 73%, 65%);
+    --roxo-escuro:hsl(238, 29%, 16%);
+    --roxo-violeta: hsl(273, 75%, 66%);
+
+    /* fonte */
+    --kumbh: 'Kumbh Sans', sans-serif;
+}

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url(_variaveis.css);
+
+body {
+    background: linear-gradient(0deg, hsl(240, 73%, 65%) 35%, hsl(273, 75%, 66%) 100%);
+    color: var(--roxo-escuro);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: var(--kumbh);
+    font-size: .75rem;
+    font-weight: 400;
+}
+
+/* Container Accordion Card */
+.container__accordion__card {
+    padding: 0 1rem;
+}
+
+/* Container Accordion */
+.container__accordion__subtitulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Accordion Card */
+.accordion__card {
+    border-bottom: 1px solid var(--branco-creme);
+}
+
+.accordion__header__pergunta {
+    font-size: 1rem;
+    max-width: 230px;
+}
+
+.accordion__header__icon {
+    display: flex;
+    background-image: url(../img/icon-arrow-down.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 15px;
+    height: 13px;
+}
+
+.accordion__header__resposta {
+    font-size: .875rem;
+    max-width: 230px;
+}
+
+
+
+/* Responsividade */
+
+
+@media screen and (min-width: 375px) {
+    .accordion__header__pergunta {
+        max-width: 100%;
+    }
+
+    .accordion__header__resposta {
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        height: 100vh;
+    }
+
+    /* Container Accordion Card */
+    .container__accordion__card {
+        padding: 4.5rem 1rem 4.5rem 0;
+
+        gap: 2rem;
+    }
+
+    /* Accordion Card */
+    .accordion__card {
+        padding-right: 1rem;
+        margin-right: 2rem;
+    }
+
+    .accordion__header__resposta {
+        max-width: 25rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    /* Container Accordion Card */
+    .container__accordion__card {
+        padding: 4.5rem 4.5rem 4.5rem 0;
+
+        gap: 4.5rem;
+    }
+
+    /* Accordion Card */
+    .accordion__card {
+        margin-right: 3.5rem;
+    }
+}
