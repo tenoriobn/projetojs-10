@@ -12,6 +12,8 @@ body {
     font-family: var(--kumbh);
     font-size: .75rem;
     font-weight: 400;
+
+    height: 100vh;
 }
 
 /* Container Accordion Card */
@@ -30,9 +32,19 @@ body {
     border-bottom: 1px solid var(--branco-creme);
 }
 
+.accordion__header {
+    cursor: pointer;
+}
+
 .accordion__header__pergunta {
     font-size: 1rem;
     max-width: 230px;
+
+    transition: .2s;
+}
+
+.accordion__card.active .accordion__header__pergunta {
+    font-weight: 700;
 }
 
 .accordion__header__icon {
@@ -41,15 +53,40 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 
+    transition: transform .3s ease-in;
+
     width: 15px;
     height: 13px;
+}
+
+.accordion__card.active .accordion__header__icon {
+    transform: rotate(180deg);
 }
 
 .accordion__header__resposta {
     font-size: .875rem;
     max-width: 230px;
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease;
 }
 
+.accordion__card.active .accordion__header__resposta {
+    max-height: 2.625rem;
+    animation: fade .5s ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 
 
 /* Responsividade */
@@ -66,10 +103,6 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-    body {
-        height: 100vh;
-    }
-
     /* Container Accordion Card */
     .container__accordion__card {
         padding: 4.5rem 1rem 4.5rem 0;
